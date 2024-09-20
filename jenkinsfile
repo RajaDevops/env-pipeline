@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-        stage('Print Message for Production') {
+        stage('Production') {
             when {
                 expression { params.ENVIRONMENT == 'Production' }
             }
@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Print Message for Development') {
+        stage('Development') {
             when {
                 expression { params.ENVIRONMENT == 'Development' }
             }
@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        stage('Print Message for Test') {
+        stage('Testing') {
             when {
                 expression { params.ENVIRONMENT == 'Test' }
             }
