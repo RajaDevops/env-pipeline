@@ -11,7 +11,7 @@ pipeline {
                 expression { params.ENVIRONMENT == 'Production' }
             }
             steps {
-                echo 'You have selected the Production environment!'
+                echo 'Code Deployed in Production environment!'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
                 expression { params.ENVIRONMENT == 'Development' }
             }
             steps {
-                echo 'You have selected the Development environment!'
+                echo 'Code Deployed in Development environment!'
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
                 expression { params.ENVIRONMENT == 'Test' }
             }
             steps {
-                echo 'You have selected the Test environment!'
+                echo 'Code Deployed in Test environment!'
             }
         }
     }
