@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    
+    parameters {
+        choice(name: 'ENVIRONMENT', choices: ['Production', 'Development', 'Test'], description: 'Select the environment')
+    }
+
+    stages {
+        stage('Print Message') {
+            when {
+                expression { params.ENVIRONMENT == 'Production' }
+            }
+            steps {
+                echo 'You have selected the Production environment!'
+            }
+        }
+
+        stage('Print Message') {
+            when {
+                expression { params.ENVIRONMENT == 'Development' }
+            }
+            steps {
+                echo 'You have selected the Development environment!'
+            }
+        }
+
+        stage('Print Message') {
+            when {
+                expression { params.ENVIRONMENT == 'Test' }
+            }
+            steps {
+                echo 'You have selected the Test environment!'
+            }
+        }
+    }
+}
