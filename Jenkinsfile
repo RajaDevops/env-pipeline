@@ -16,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('Print Message for Selected Environment') {
+        stage('Production Environment') {
             when {
                 expression { env.SELECTED_ENV == 'Production' }
             }
@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stage('Print Message for Development') {
+        stage('Development Environment') {
             when {
                 expression { env.SELECTED_ENV == 'Development' }
             }
@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage('Print Message for Test') {
+        stage('Test Environment') {
             when {
                 expression { env.SELECTED_ENV == 'Test' }
             }
